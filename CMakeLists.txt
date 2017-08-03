@@ -10,6 +10,13 @@ MESSAGE("Build type: " ${CMAKE_BUILD_TYPE})
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall  -O3 -march=native ")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall   -O3 -march=native")
 
+# MYNT EYE
+if(DEFINED ENV{MYNTEYE_SDK_ROOT})
+  set(MYNTEYE_SDK_DIR $ENV{MYNTEYE_SDK_ROOT})
+endif()
+set(MYNT_SDK_LIB_DIR ${MYNTEYE_SDK_DIR}/lib)
+include_directories(${MYNTEYE_SDK_DIR}/include)
+
 # Check C++11 or C++0x support
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
@@ -96,6 +103,9 @@ add_executable(stereo_euroc
 Examples/Stereo/stereo_euroc.cc)
 target_link_libraries(stereo_euroc ${PROJECT_NAME})
 
+add_executable(stereo_mynteye
+Examples/Stereo/stereo_mynteye.cc)
+target_link_libraries(stereo_mynteye ${PROJECT_NAME} ${MYNT_SDK_LIB_DIR}/libmynteye_core.so)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Monocular)
 

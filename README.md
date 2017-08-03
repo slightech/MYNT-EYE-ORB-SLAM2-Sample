@@ -1,4 +1,27 @@
 # ORB-SLAM2
+
+We create a sample which named `stereo_mynteye` in ORB-SLAM2 to show how to use our MYNT EYE camera.
+
+Before you run `stereo_mynteye` in ORB-SLAM2, please follow the steps below:
+
+1. Download MYNT EYE SDK [here](https://github.com/slightech/MYNT-EYE-SDK) and follow the tutorial to install it.
+
+2. Follow the normal procedure to install ORB-SLAM2.
+
+3. Calibrate MYNT EYE camera and change the parameters in `cam_stereo.yaml`.
+
+4. Run the `stereo_mynteye`,
+
+    ```
+    $ ./Examples/Stereo/mynt-eye-orb-slam2-sample ./Vocabulary/ORBvoc.txt ./Examples/Stereo/cam_stereo.yaml 1
+    ```
+
+    `./Vocabulary/ORBvoc.txt` is the path of vocabulary file, `./Examples/Stereo/cam_stereo.yaml` is the path of camera's configuration file, `1` stands for video1.
+
+5. You could know the running effect through the video [here](https://www.youtube.com/watch?v=Z9K0L5jiVYY).
+
+---
+
 **Authors:** [Raul Mur-Artal](http://webdiis.unizar.es/~raulmur/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/), [J. M. M. Montiel](http://webdiis.unizar.es/~josemari/) and [Dorian Galvez-Lopez](http://doriangalvez.com/) ([DBoW2](https://github.com/dorian3d/DBoW2))
 
 **13 Jan 2017**: OpenCV 3 and Eigen 3.3 are now supported.
