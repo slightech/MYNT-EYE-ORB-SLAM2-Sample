@@ -40,29 +40,32 @@ endif()
 
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
-
+find_package(Boost COMPONENTS system)
 include_directories(
 ${PROJECT_SOURCE_DIR}
 ${PROJECT_SOURCE_DIR}/../../../
 ${PROJECT_SOURCE_DIR}/../../../include
 ${Pangolin_INCLUDE_DIRS}
+${Boost_INCLUDE_DIRS}
 )
 
 set(LIBS 
 ${OpenCV_LIBS} 
 ${EIGEN3_LIBS}
 ${Pangolin_LIBRARIES}
+${Boost_LIBRARIES}
 ${PROJECT_SOURCE_DIR}/../../../Thirdparty/DBoW2/lib/libDBoW2.so
 ${PROJECT_SOURCE_DIR}/../../../Thirdparty/g2o/lib/libg2o.so
 ${PROJECT_SOURCE_DIR}/../../../lib/libORB_SLAM2.so
+
 )
 
 # Node for monocular camera
-rosbuild_add_executable(Mono
-src/ros_mono.cc
+rosbuild_add_executable(mynteye_mono
+src/ros_mynteye_mono.cc
 )
 
-target_link_libraries(Mono
+target_link_libraries(mynteye_mono
 ${LIBS}
 )
 
@@ -86,6 +89,14 @@ target_link_libraries(Stereo
 ${LIBS}
 )
 
+# Node for mynteye stereo camera
+rosbuild_add_executable(ros_mynteye_stereo
+src/ros_mynteye_stereo.cc
+)
+
+target_link_libraries(ros_mynteye_stereo
+${LIBS}
+)
 # Node for RGB-D camera
 rosbuild_add_executable(RGBD
 src/ros_rgbd.cc
