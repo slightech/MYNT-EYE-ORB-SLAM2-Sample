@@ -28,6 +28,21 @@ endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
+#mynteye-sdk2
+if (DEFINED ENV{MYNTEYE_SDK2_ROOT})
+    set(MYNTEYE_SDK2_DIR $ENV{MYNTEYE_SDK2_ROOT})
+endif()
+
+set(MYNT_SDK2_LIB_DIR ${MYNTEYE_SDK2_DIR}/_install/lib)
+include_directories(
+${MYNTEYE_SDK2_DIR}/_install/include
+${MYNTEYE_SDK2_DIR}/third_party/glog
+)
+
+find_package(glog 0.3.5 REQUIRED)
+
+
+
 find_package(OpenCV 3.0 QUIET)
 if(NOT OpenCV_FOUND)
    find_package(OpenCV 2.4.3 QUIET)
@@ -96,6 +111,10 @@ add_executable(stereo_euroc
 Examples/Stereo/stereo_euroc.cc)
 target_link_libraries(stereo_euroc ${PROJECT_NAME})
 
+#stereo camera for mynteye 
+add_executable(stereo_mynt
+Examples/Stereo/stereo_mynt.cc)
+target_link_libraries(stereo_mynt  ${PROJECT_NAME} glog::glog ${MYNT_SDK2_LIB_DIR}/libmynteye.so.2)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Monocular)
 
@@ -110,4 +129,5 @@ target_link_libraries(mono_kitti ${PROJECT_NAME})
 add_executable(mono_euroc
 Examples/Monocular/mono_euroc.cc)
 target_link_libraries(mono_euroc ${PROJECT_NAME})
+
 
