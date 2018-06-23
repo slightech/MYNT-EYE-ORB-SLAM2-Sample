@@ -11,11 +11,11 @@
     export MYNTEYE_SDK2_ROOT=MYNT-EYE-SDK-2_INSTALL_PATH
     ```
 3. Follow the normal procedure to install ORB_SLAM2.
-4. Update distortion_parameters and projection_parameters to `<ORB_SLAM2>/coniig/mynteye_*.yaml`
+4. Update distortion_parameters and projection_parameters to `<ORB_SLAM2>/config/mynteye_*.yaml`
 5. run examples by mynteye camera.
 
 ## Stereo Examples
-* Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  `<ORB_SLAM2>/coniig/mynteye_stereo.yaml`.
+* Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  `<ORB_SLAM2>/config/mynteye_stereo.yaml`.
 * run stereo sample using the follow type.
 
   ```
@@ -47,7 +47,7 @@
   * Launch ORB_SLAM2 Mono_ROS
 
     ```
-    rosrun ORB_SLAM2 mynteye_mono ../../../Vocabulary/ORBvoc.txt ../../../config/mynteye_config.yaml /mynteye/left/image_raw
+    rosrun ORB_SLAM2 mynteye_mono ../../../Vocabulary/ORBvoc.txt ../../../config/mynteye_mono.yaml /mynteye/left/image_raw
     ```
   ### Stereo_ROS Example
 
