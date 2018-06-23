@@ -34,7 +34,7 @@
     ```
   ### Mono_ROS Example
 
-  * Update distortion_parameters and projection_parameters in `<ORBSLAM2>/config/mynteye/mynteye_config.yaml`
+  * Update distortion_parameters and projection_parameters in `<ORBSLAM2>/config/mynteye_mono.yaml`
 
     ```
     cd MYNT-EYE-SDK-2
