@@ -17,9 +17,10 @@
 ## Stereo Examples
 * Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  `<ORB_SLAM2>/coniig/mynteye_stereo.yaml`.
 * run stereo sample using the follow type.
-    ```
+
+  ```
   ./Examples/Stereo/stereo_mynt ../../Vocabulary/ORBvoc.txt ../../config/mynteye_stereo.yaml true /mynteye/left/image_raw /mynteye/right/image_raw
-   ```
+  ```
 
 ## Building the nodes for mono and stereo (ROS)
 * Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2:
