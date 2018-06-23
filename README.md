@@ -33,7 +33,9 @@
   ./build_ros.sh
     ```
   ### Mono_ROS Example
-  - Update distortion_parameters and projection_parameters in `<ORBSLAM2>/config/mynteye/mynteye_config.yaml`
+
+  * Update distortion_parameters and projection_parameters in `<ORBSLAM2>/config/mynteye/mynteye_config.yaml`
+
     ```
     cd MYNT-EYE-SDK-2
 
@@ -42,20 +44,20 @@
     ```
     After running the above type, pinhole's distortion_parameters and projection_parameters is obtained , and then update to `<ORB_SLAM2>/config/mynteye_mono.yaml`.
 
-  - Launch ORB_SLAM2 Mono_ROS
+  * Launch ORB_SLAM2 Mono_ROS
 
     ```
     rosrun ORB_SLAM2 mynteye_mono ../../../Vocabulary/ORBvoc.txt ../../../config/mynteye_config.yaml /mynteye/left/image_raw
     ```
   ### Stereo_ROS Example
 
-  - Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  <ORB_SLAM2>/coniig/mynteye_stereo.yaml.
-   - Launch ORB_SLAM2 Stereo_ROS
+  * Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  <ORB_SLAM2>/coniig/mynteye_stereo.yaml.
+
+  * Launch ORB_SLAM2 Stereo_ROS
 
         ```
         rosrun ORB_SLAM2 ros_mynteye_stereo ../../../Vocabulary/ORBvoc.txt ../../../config/mynteye_stereo.yaml true /mynteye/left/image_raw /mynteye/right/image_raw
         ```
-
 ---
 
 # ORB-SLAM2
