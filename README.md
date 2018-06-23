@@ -1,4 +1,4 @@
-#MYNT-ORBSLAM2
+# MYNT-ORBSLAM2
 [MYNT-EYE-SDK-2]: https://github.com/slightech/MYNT-EYE-SDK-2.git
 [MYNT-EYE-VINS-Sample]:https://code.slightech.com:666/sweeper/VINS-Mono.git
 
