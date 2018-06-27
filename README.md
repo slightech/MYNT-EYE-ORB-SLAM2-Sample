@@ -48,7 +48,7 @@
     ```
   ### Stereo_ROS Example
 
-  * Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  <ORB_SLAM2>/coniig/mynteye_stereo.yaml.
+  * Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  <ORB_SLAM2>/config/mynteye_stereo.yaml.
 
   * Launch ORB_SLAM2 Stereo_ROS
 
