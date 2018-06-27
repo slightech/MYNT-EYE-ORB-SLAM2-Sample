@@ -5,11 +5,8 @@
 [ROS-StereoCalibration]:http://wiki.ros.org/camera_calibration/Tutorials/StereoCalibration
 
 ## If you wanna run ORB_SLAM2 with mynteye camera, please follow the steps:
-1. Download [MYNT-EYE-SDK-2][].
-2. Add the path including **MYNT-EYE-SDK** to the environment variable. Open .bashrc file and add at the end the following line.
-    ```
-    export MYNTEYE_SDK2_ROOT=MYNT-EYE-SDK-2_INSTALL_PATH
-    ```
+1. Download [MYNT-EYE-SDK-2][] and follow steps to install.
+2. Add  **MYNT-EYE-SDK** path to the environment variable. Open .bashrc file and add at the end the following path. `export MYNTEYE_SDK2_ROOT=MYNT-EYE-SDK-2_INSTALL_PATH`
 3. Follow the normal procedure to install ORB_SLAM2.
 4. Update distortion_parameters and projection_parameters to `<ORB_SLAM2>/config/mynteye_*.yaml`
 5. run examples by mynteye camera.
