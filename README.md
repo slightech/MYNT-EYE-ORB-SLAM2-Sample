@@ -13,7 +13,7 @@ Before you run `stereo_mynteye` in ORB-SLAM2, please follow the steps below:
 4. Run the `stereo_mynteye`,
 
     ```
-    $ ./Examples/Stereo/mynt-eye-orb-slam2-sample ./Vocabulary/ORBvoc.txt ./Examples/Stereo/cam_stereo.yaml 1
+    $ ./Examples/Stereo/stereo_mynteye ./Vocabulary/ORBvoc.txt ./Examples/Stereo/cam_stereo.yaml 1
     ```
 
     `./Vocabulary/ORBvoc.txt` is the path of vocabulary file, `./Examples/Stereo/cam_stereo.yaml` is the path of camera's configuration file, `1` stands for video1.
