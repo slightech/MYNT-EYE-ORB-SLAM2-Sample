@@ -52,9 +52,9 @@
 
   * Launch ORB_SLAM2 Stereo_ROS
 
-        ```
+     ```
         rosrun ORB_SLAM2 ros_mynteye_stereo ../../../Vocabulary/ORBvoc.txt ../../../config/mynteye_stereo.yaml true /mynteye/left/image_raw /mynteye/right/image_raw
-        ```
+      ```
 ---
 
 # ORB-SLAM2
