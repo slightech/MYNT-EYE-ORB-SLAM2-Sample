@@ -13,6 +13,11 @@
 
 ## Stereo Examples
 * Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  `<ORB_SLAM2>/config/mynteye_stereo.yaml`.
+* Execute build.sh script:
+  ```
+  chmod +x build.sh
+  ./build.sh
+  ```
 * run stereo sample using the follow type.
 
   ```
@@ -44,7 +49,7 @@
   * Launch ORB_SLAM2 Mono_ROS
 
     ```
-    rosrun ORB_SLAM2 mynteye_mono ../../../Vocabulary/ORBvoc.txt ../../../config/mynteye_mono.yaml /mynteye/left/image_raw
+    rosrun ORB_SLAM2 mynteye_mono ./Vocabulary/ORBvoc.txt ./config/mynteye_mono.yaml /mynteye/left/image_raw
     ```
   ### Stereo_ROS Example
 
@@ -53,7 +58,7 @@
   * Launch ORB_SLAM2 Stereo_ROS
 
      ```
-        rosrun ORB_SLAM2 ros_mynteye_stereo ../../../Vocabulary/ORBvoc.txt ../../../config/mynteye_stereo.yaml true /mynteye/left/image_raw /mynteye/right/image_raw
+        rosrun ORB_SLAM2 ros_mynteye_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_stereo.yaml true /mynteye/left/image_raw /mynteye/right/image_raw
       ```
 ---
 
