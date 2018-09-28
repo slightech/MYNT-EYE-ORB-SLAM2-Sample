@@ -32,6 +32,12 @@
 
 MYNTEYE_USE_NAMESPACE
 
+bool flag = true;
+void exit_while(int sig)
+{
+  flag = false;
+}
+
 class ImageGrabber
 {
     public: 
@@ -151,18 +157,18 @@ int main(int argc, char** argv)
 
   device->SetStreamCallback(
       Stream::LEFT, [](const device::StreamData &data) {
-        CHECK_NOTNULL(data.img);
+        //CHECK_NOTNULL(data.img);
 	});
   device->SetStreamCallback(
       Stream::RIGHT, [](const device::StreamData &data) {
-        CHECK_NOTNULL(data.img);
+        //CHECK_NOTNULL(data.img);
       });
 
     // Enable this will cache the motion datas until you get them.
   device->EnableMotionDatas();
   device->Start(Source::ALL);
 
-  while (true) 
+  while (flag) 
   {
     device->WaitForStreams();
 

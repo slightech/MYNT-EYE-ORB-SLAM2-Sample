@@ -6,10 +6,9 @@
 
 ## If you wanna run ORB_SLAM2 with mynteye camera, please follow the steps:
 1. Download [MYNT-EYE-SDK-2][] and follow steps to install.
-2. Add  **MYNT-EYE-SDK** path to the environment variable. Open .bashrc file and add at the end the following path. `export MYNTEYE_SDK2_ROOT=MYNT-EYE-SDK-2_INSTALL_PATH`
-3. Follow the normal procedure to install ORB_SLAM2.
-4. Update distortion_parameters and projection_parameters to `<ORB_SLAM2>/config/mynteye_*.yaml`
-5. run examples by mynteye camera.
+2. Follow the normal procedure to install ORB_SLAM2.
+3. Update distortion_parameters and projection_parameters to `<ORB_SLAM2>/config/mynteye_*.yaml`
+4. run examples by mynteye camera.
 
 ## Stereo Examples
 * Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  `<ORB_SLAM2>/config/mynteye_stereo.yaml`.
