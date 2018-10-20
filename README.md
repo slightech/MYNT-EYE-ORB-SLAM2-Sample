@@ -20,7 +20,7 @@
 * run stereo sample using the follow type.
 
   ```
-  ./Examples/Stereo/stereo_mynt ./Vocabulary/ORBvoc.txt ./config/mynteye_stereo.yaml true /mynteye/left/image_raw /mynteye/right/image_raw
+  ./Examples/Stereo/stereo_mynt ./Vocabulary/ORBvoc.txt ./config/mynteye_stereo.yaml true
   ```
 
 ## Building the nodes for mono and stereo (ROS)

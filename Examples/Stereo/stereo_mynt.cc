@@ -25,7 +25,7 @@
 #include <opencv2/opencv.hpp>
 #include "../../include/System.h"
 
-#include "mynteye/glog_init.h"
+#include "mynteye/logger.h"
 #include "mynteye/device.h"
 #include "mynteye/utils.h"
 #include "mynteye/times.h"
@@ -62,6 +62,10 @@ void ImageGrabber::GrabStereo(const cv::Mat& left_img, const cv::Mat& right_img,
 	cv::remap(right_img, _right_img, M1r, M2r, cv::INTER_LINEAR);
 	mpSLAM->TrackStereo(_left_img, _right_img, timeStamp);
     }
+    else
+    {
+      mpSLAM->TrackStereo(left_img, right_img, timeStamp);
+    }
 }
 
 int main(int argc, char** argv)
@@ -70,22 +74,17 @@ int main(int argc, char** argv)
     glog_init _(argc, argv);
 
 
-    if (argc != 6 )
+    if (argc != 4 )
     {
-    	std::cout << std::endl << "Usage: ./stereo_mynt path_to_vocabulary path_to_setting do_rectify topic_left_image topic_right_image" << std::endl;
+    	std::cout << std::endl << "Usage: ./stereo_mynt path_to_vocabulary path_to_setting do_rectify " << std::endl;
 	return 1;
     }
 
     std::cout << "--args: " << std::endl
     	      << "	path_to_vocabulary: " << argv[1] << std::endl
 	      << "	path_to_setting: " << argv[2] << std::endl
-	      << "	do_rectify(ture | false): " << argv[3] << std::endl
-	      << "	topic_left_image: " << argv[4] << std::endl
-	      << "	topic_right_image: " << argv[5] << std::endl;
+	      << "	do_rectify(ture | false): " << argv[3] << std::endl;
 
-    std::string topic_left_image = argv[4];
-    std::string topic_right_image = argv[5];
-    
     ORB_SLAM2::System SLAM(argv[1], argv[2], ORB_SLAM2::System::STEREO, true);
     ImageGrabber igb(&SLAM);
 
