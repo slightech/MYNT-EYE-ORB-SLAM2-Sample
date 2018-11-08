@@ -1,11 +1,11 @@
 # MYNT-ORBSLAM2
-[MYNT-EYE-SDK-2]: https://github.com/slightech/MYNT-EYE-SDK-2.git
+[MYNT-EYE-S-SDK]: https://github.com/slightech/MYNT-EYE-S-SDK.git
 [MYNT-EYE-VINS-Sample]:https://code.slightech.com:666/sweeper/VINS-Mono.git
 
 [ROS-StereoCalibration]:http://wiki.ros.org/camera_calibration/Tutorials/StereoCalibration
 
 ## If you wanna run ORB_SLAM2 with mynteye camera, please follow the steps:
-1. Download [MYNT-EYE-SDK-2][] and follow steps to install.
+1. Download [MYNT-EYE-S-SDK][] and follow steps to install.
 2. Follow the normal procedure to install ORB_SLAM2.
 3. Update distortion_parameters and projection_parameters to `<ORB_SLAM2>/config/mynteye_*.yaml`
 4. run examples by mynteye camera.
@@ -38,7 +38,7 @@
   * Update distortion_parameters and projection_parameters in `<ORBSLAM2>/config/mynteye_mono.yaml`
 
     ```
-    cd MYNT-EYE-SDK-2
+    cd MYNT-EYE-S-SDK
 
     ./samples/_output/bin/tutorials/get_img_params
 
