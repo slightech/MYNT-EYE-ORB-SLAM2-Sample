@@ -88,15 +88,26 @@ src/ros_stereo.cc
 target_link_libraries(Stereo
 ${LIBS}
 )
-
 # Node for mynteye stereo camera
-rosbuild_add_executable(ros_mynteye_stereo
+rosbuild_add_executable(mynteye_stereo
 src/ros_mynteye_stereo.cc
 )
 
-target_link_libraries(ros_mynteye_stereo
+target_link_libraries(mynteye_stereo
 ${LIBS}
 )
+
+
+# Node for mynteye rgbd camera
+rosbuild_add_executable(mynteye_rgbd
+src/ros_mynteye_rgbd.cc
+)
+
+target_link_libraries(mynteye_rgbd
+${LIBS}
+)
+
+
 # Node for RGB-D camera
 rosbuild_add_executable(RGBD
 src/ros_rgbd.cc
