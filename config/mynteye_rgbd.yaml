@@ -8,18 +8,31 @@
 Camera.fx: 700.187943
 Camera.fy: 699.855394
 Camera.cx: 641.861436
-Camera.cy: 367.767547
+Camera.cy: 367.76754
 
 Camera.k1: -0.325639
 Camera.k2: 0.119911
 Camera.p1: 0.000158
 Camera.p2: 0.000137
+Camera.k3: 0
+
+Camera.width: 1280
+Camera.height: 720
 
 # Camera frames per second 
 Camera.fps: 20.0
 
+# IR projector baseline times fx (aprox.)
+Camera.bf: 78.36857
+
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
-Camera.RGB: 0
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times.
+ThDepth: 40.0
+
+# Deptmap values factor 
+DepthMapFactor: 5000.0
 
 #--------------------------------------------------------------------------------------------
 # ORB Parameters
@@ -43,7 +56,7 @@ ORBextractor.minThFAST: 7
 
 #--------------------------------------------------------------------------------------------
 # Viewer Parameters
-#---------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------
 Viewer.KeyFrameSize: 0.05
 Viewer.KeyFrameLineWidth: 1
 Viewer.GraphLineWidth: 0.9
