@@ -1,29 +1,17 @@
 # MYNT-ORBSLAM2
-[MYNT-EYE-S-SDK]: https://github.com/slightech/MYNT-EYE-S-SDK.git
+[MYNT-EYE-D-SDK]: https://github.com/slightech/MYNT-EYE-D-SDK.git
 [MYNT-EYE-VINS-Sample]:https://code.slightech.com:666/sweeper/VINS-Mono.git
 
 [ROS-StereoCalibration]:http://wiki.ros.org/camera_calibration/Tutorials/StereoCalibration
 
 ## If you wanna run ORB_SLAM2 with mynteye camera, please follow the steps:
-1. Download [MYNT-EYE-S-SDK][] and follow steps to install.
+1. Download [MYNT-EYE-D-SDK][] and follow steps to install.
 2. Follow the normal procedure to install ORB_SLAM2.
-3. Update distortion_parameters and projection_parameters to `<ORB_SLAM2>/config/mynteye_*.yaml`
+3. calibrate camera and update distortion_parameters and projection_parameters .
 4. run examples by mynteye camera.
 
-## Stereo Examples
-* Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  `<ORB_SLAM2>/config/mynteye_stereo.yaml`.
-* Execute build.sh script:
-  ```
-  chmod +x build.sh
-  ./build.sh
-  ```
-* run stereo sample using the follow type.
 
-  ```
-  ./Examples/Stereo/stereo_mynt ./Vocabulary/ORBvoc.txt ./config/mynteye_stereo.yaml true
-  ```
-
-## Building the nodes for mono and stereo (ROS)
+## Building the nodes for mono stereo and rgbd (ROS)
 * Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2:
     ```
     export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/ORB_SLAM2/Examples/ROS
@@ -38,27 +26,29 @@
   * Update distortion_parameters and projection_parameters in `<ORBSLAM2>/config/mynteye_mono.yaml`
 
     ```
-    cd MYNT-EYE-S-SDK
-
-    ./samples/_output/bin/tutorials/get_img_params
-
+    cd MYNT-EYE-D-SDK
+    ./samples/_output/bin/get_img_params
     ```
     After running the above type, pinhole's distortion_parameters and projection_parameters is obtained , and then update to `<ORB_SLAM2>/config/mynteye_mono.yaml`.
 
   * Launch ORB_SLAM2 Mono_ROS
 
     ```
-    rosrun ORB_SLAM2 mynteye_mono ./Vocabulary/ORBvoc.txt ./config/mynteye_mono.yaml /mynteye/left/image_raw
+    rosrun ORB_SLAM2 mynteye_mono ./Vocabulary/ORBvoc.txt ./config/mynteye_mono.yaml /mynteye/left/image_mono
     ```
   ### Stereo_ROS Example
-
-  * Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  <ORB_SLAM2>/config/mynteye_stereo.yaml.
 
   * Launch ORB_SLAM2 Stereo_ROS
 
      ```
-        rosrun ORB_SLAM2 ros_mynteye_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_stereo.yaml true /mynteye/left/image_raw /mynteye/right/image_raw
+    rosrun ORB_SLAM2 mynteye_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_stereo.yaml true /mynteye/left/image_mono /mynteye/right/image_mono
       ```
+ ### RGBD_ROS Example
+
+  * Launch ORB_SLAM2 Stereo_ROS
+
+     ```
+    rosrun ORB_SLAM2 mynteye_rgbd ./Vocabulary/ORBvoc.txt ./config/mynteye_rgbd.yaml  /mynteye/left/image_mono /mynteye/depth/image_raw
 ---
 
 # ORB-SLAM2
