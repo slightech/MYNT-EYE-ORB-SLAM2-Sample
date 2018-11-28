@@ -99,10 +99,10 @@ Examples/Stereo/stereo_euroc.cc)
 target_link_libraries(stereo_euroc ${PROJECT_NAME})
 
 #stereo camera for mynteye 
-message("GLOG_LIBRARIES: ${GLOG_LIBRARIES}")
-add_executable(stereo_mynt
-Examples/Stereo/stereo_mynt.cc)
-target_link_libraries(stereo_mynt  ${PROJECT_NAME} ${GLOG_LIBRARIES} mynteye)
+#message("GLOG_LIBRARIES: ${GLOG_LIBRARIES}")
+#add_executable(stereo_mynt
+#Examples/Stereo/stereo_mynt.cc)
+#target_link_libraries(stereo_mynt  ${PROJECT_NAME} ${GLOG_LIBRARIES} mynteye)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Monocular)
 
