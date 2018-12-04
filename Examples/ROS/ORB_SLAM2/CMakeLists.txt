@@ -41,6 +41,21 @@ endif()
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 find_package(Boost COMPONENTS system)
+find_package(mynteye)
+find_package(mynteyed)
+
+if(mynteye_FOUND)
+   message(STATUS "MYNT-EYE-S-SDK found.")
+else()
+   message(STATUS "MYNT-EYE-S-SDK not found.")
+endif()
+
+if(mynteyed_FOUND)
+   message(STATUS "MYNT-EYE-D-SDK found.")
+else()
+   message(STATUS "MYNT-EYE-D-SDK not found.")
+endif()
+
 include_directories(
 ${PROJECT_SOURCE_DIR}
 ${PROJECT_SOURCE_DIR}/../../../
@@ -89,24 +104,37 @@ target_link_libraries(Stereo
 ${LIBS}
 )
 # Node for mynteye stereo camera
-rosbuild_add_executable(mynteye_stereo
-src/ros_mynteye_stereo.cc
-)
 
-target_link_libraries(mynteye_stereo
-${LIBS}
-)
+if(mynteyed_FOUND)
+   rosbuild_add_executable(mynteye_d_stereo
+   src/ros_mynteye_d_stereo.cc
+   )
 
+   target_link_libraries(mynteye_d_stereo
+   ${LIBS}
+   )
+endif()
+
+if(mynteye_FOUND)
+   rosbuild_add_executable(mynteye_s_stereo
+   src/ros_mynteye_s_stereo.cc
+   )
+
+   target_link_libraries(mynteye_s_stereo
+   ${LIBS}
+   )
+endif()
 
 # Node for mynteye rgbd camera
-rosbuild_add_executable(mynteye_rgbd
-src/ros_mynteye_rgbd.cc
-)
+if(mynteyed_FOUND)
+   rosbuild_add_executable(mynteye_rgbd
+   src/ros_mynteye_rgbd.cc
+   )
 
-target_link_libraries(mynteye_rgbd
-${LIBS}
-)
-
+   target_link_libraries(mynteye_rgbd
+   ${LIBS}
+   )
+endif()
 
 # Node for RGB-D camera
 rosbuild_add_executable(RGBD

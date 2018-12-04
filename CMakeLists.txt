@@ -40,6 +40,20 @@ endif()
 
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
+find_package(mynteye)
+find_package(mynteyed)
+
+if(mynteye_FOUND)
+   message(STATUS "MYNT-EYE-S-SDK found.")
+else()
+   message(STATUS "MYNT-EYE-S-SDK not found.")
+endif()
+
+if(mynteyed_FOUND)
+   message(STATUS "MYNT-EYE-D-SDK found.")
+else()
+   message(STATUS "MYNT-EYE-D-SDK not found.")
+endif()
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
@@ -98,11 +112,13 @@ add_executable(stereo_euroc
 Examples/Stereo/stereo_euroc.cc)
 target_link_libraries(stereo_euroc ${PROJECT_NAME})
 
-#stereo camera for mynteye 
-#message("GLOG_LIBRARIES: ${GLOG_LIBRARIES}")
-#add_executable(stereo_mynt
-#Examples/Stereo/stereo_mynt.cc)
-#target_link_libraries(stereo_mynt  ${PROJECT_NAME} ${GLOG_LIBRARIES} mynteye)
+#stereo camera for mynteye
+if(mynteye_FOUND)
+   message("GLOG_LIBRARIES: ${GLOG_LIBRARIES}")
+   add_executable(stereo_mynt_s
+   Examples/Stereo/stereo_mynt_s.cc)
+   target_link_libraries(stereo_mynt_s  ${PROJECT_NAME} ${GLOG_LIBRARIES} mynteye)
+endif()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Monocular)
 
