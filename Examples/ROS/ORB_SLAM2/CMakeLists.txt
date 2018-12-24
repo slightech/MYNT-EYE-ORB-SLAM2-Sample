@@ -75,15 +75,6 @@ ${PROJECT_SOURCE_DIR}/../../../lib/libORB_SLAM2.so
 
 )
 
-# Node for monocular camera
-rosbuild_add_executable(mynteye_mono
-src/ros_mynteye_mono.cc
-)
-
-target_link_libraries(mynteye_mono
-${LIBS}
-)
-
 # Node for monocular camera (Augmented Reality Demo)
 rosbuild_add_executable(MonoAR
 src/AR/ros_mono_ar.cc
@@ -121,17 +112,6 @@ if(mynteye_FOUND)
    )
 
    target_link_libraries(mynteye_s_stereo
-   ${LIBS}
-   )
-endif()
-
-# Node for mynteye rgbd camera
-if(mynteyed_FOUND)
-   rosbuild_add_executable(mynteye_rgbd
-   src/ros_mynteye_rgbd.cc
-   )
-
-   target_link_libraries(mynteye_rgbd
    ${LIBS}
    )
 endif()
