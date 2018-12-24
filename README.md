@@ -11,7 +11,7 @@
 4. run examples by mynteye camera.
 
 
-## Building the nodes for mono stereo and rgbd (ROS)
+## Building the nodes for  stereo  (ROS)
 * Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2:
     ```
     export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/ORB_SLAM2/Examples/ROS
@@ -21,21 +21,10 @@
     chmod +x build_ros.sh
   ./build_ros.sh
     ```
-  ### Mono_ROS Example
-
-  * Update distortion_parameters and projection_parameters in `<ORBSLAM2>/config/mynteye_mono.yaml`
-
     ```
     cd MYNT-EYE-D-SDK
     ./samples/_output/bin/get_img_params
-    ```
-    After running the above type, pinhole's distortion_parameters and projection_parameters is obtained , and then update to `<ORB_SLAM2>/config/mynteye_mono.yaml`.
-
-  * Launch ORB_SLAM2 Mono_ROS
-
-    ```
-    rosrun ORB_SLAM2 mynteye_mono ./Vocabulary/ORBvoc.txt ./config/mynteye_mono.yaml /mynteye/left/image_mono
-    ```
+      ```
   ### Stereo_ROS Example
 
   * Launch ORB_SLAM2 Stereo_ROS
@@ -43,12 +32,6 @@
      ```
     rosrun ORB_SLAM2 mynteye_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_stereo.yaml true /mynteye/left/image_mono /mynteye/right/image_mono
       ```
- ### RGBD_ROS Example
-
-  * Launch ORB_SLAM2 Stereo_ROS
-
-     ```
-    rosrun ORB_SLAM2 mynteye_rgbd ./Vocabulary/ORBvoc.txt ./config/mynteye_rgbd.yaml  /mynteye/left/image_mono /mynteye/depth/image_raw
 ---
 
 # ORB-SLAM2
