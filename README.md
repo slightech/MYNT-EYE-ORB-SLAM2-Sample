@@ -60,13 +60,13 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
 * Execute build_ros.sh script:
     ```
     chmod +x build_ros.sh
-  ./build_ros.sh
+    ./build_ros.sh
     ```
 * Launch ORB_SLAM2 Stereo_ROS
 
-     ```
+    ```
     rosrun ORB_SLAM2 mynteye_d_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_d_stereo.yaml true /mynteye/left/image_mono /mynteye/right/image_mono
-      ```
+    ```
 
 ---
 
