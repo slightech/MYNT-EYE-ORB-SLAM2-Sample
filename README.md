@@ -21,17 +21,18 @@
     chmod +x build_ros.sh
   ./build_ros.sh
     ```
+* Update distortion_parameters and projection_parameters in `<ORBSLAM2>/config/mynteye_stereo.yaml`
     ```
     cd MYNT-EYE-D-SDK
     ./samples/_output/bin/get_img_params
-      ```
-  ### Stereo_ROS Example
+    ```
+### Stereo_ROS Example
 
-  * Launch ORB_SLAM2 Stereo_ROS
+* Launch ORB_SLAM2 Stereo_ROS
 
-     ```
+    ```
     rosrun ORB_SLAM2 mynteye_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_stereo.yaml true /mynteye/left/image_mono /mynteye/right/image_mono
-      ```
+    ```
 ---
 
 # ORB-SLAM2
