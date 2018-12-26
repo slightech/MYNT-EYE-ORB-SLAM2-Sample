@@ -40,8 +40,8 @@ endif()
 
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
-find_package(mynteye)
-find_package(mynteyed)
+find_package(mynteye QUIET)
+find_package(mynteyed QUIET)
 
 if(mynteye_FOUND)
    message(STATUS "MYNT-EYE-S-SDK found.")
