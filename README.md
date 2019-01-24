@@ -40,7 +40,15 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
 * Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  <ORB_SLAM2>/config/mynteye_s_stereo.yaml.
 
 * Launch ORB_SLAM2 Stereo_ROS
-
+   
+   Run camera mynt_eye_ros_wrapper
+    ```
+    cd [path of mynteye-s-sdk]
+    make ros
+    source ./wrappers/ros/devel/setup.bash
+    roslaunch mynt_eye_ros_wrapper mynteye.launch
+    ```
+   Run ORB_SLAM2, open another terminal and follow the steps.
     ```
     rosrun ORB_SLAM2 mynteye_s_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_s_stereo.yaml true /mynteye/left/image_raw /mynteye/right/image_raw
     ```
@@ -63,7 +71,16 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
     ./build_ros.sh
     ```
 * Launch ORB_SLAM2 Stereo_ROS
-
+   
+   Run camera mynteye_wrapper_d
+    
+    ```
+    cd [path of mynteye-d-sdk]
+    make ros
+    source ./wrappers/ros/devel/setup.bash
+    roslaunch mynteye_wrapper_d mynteye.launch
+    ```
+    Run ORB_SLAM2, open another terminal and follow the steps.
     ```
     rosrun ORB_SLAM2 mynteye_d_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_d_stereo.yaml true /mynteye/left/image_mono /mynteye/right/image_mono
     ```
