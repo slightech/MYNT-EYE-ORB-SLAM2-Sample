@@ -78,11 +78,11 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
     cd [path of mynteye-d-sdk]
     make ros
     source ./wrappers/ros/devel/setup.bash
-    roslaunch mynteye_wrapper_d mynteye.launch
+    roslaunch mynteye_wrapper_d orb_slam2.launch
     ```
     Run ORB_SLAM2, open another terminal and follow the steps.
     ```
-    rosrun ORB_SLAM2 mynteye_d_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_d_stereo.yaml true /mynteye/left/image_mono /mynteye/right/image_mono
+    rosrun ORB_SLAM2 mynteye_d_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_d_stereo.yaml false /mynteye/left/image_mono /mynteye/right/image_mono
     ```
 
 ---
