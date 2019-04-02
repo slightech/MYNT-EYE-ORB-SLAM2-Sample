@@ -15,7 +15,6 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
 4. run examples by mynteye camera.
 
 ### Stereo Examples
-* Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  `<ORB_SLAM2>/config/mynteye_s_stereo.yaml`.
 * Execute build.sh script:
   ```
   chmod +x build.sh
@@ -36,8 +35,6 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
     chmod +x build_ros.sh
   ./build_ros.sh
     ```
-
-* Calibrate a stereo camera with [ROS-StereoCalibration][] or opencv, and then update parameters to  <ORB_SLAM2>/config/mynteye_s_stereo.yaml.
 
 * Launch ORB_SLAM2 Stereo_ROS
    
