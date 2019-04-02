@@ -22,7 +22,7 @@ Camera.height: 480
 Camera.fps: 30.0
 
 # stereo baseline times fx
-Camera.bf: 47.90639384423901
+Camera.bf: 80
 
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
 Camera.RGB: 1

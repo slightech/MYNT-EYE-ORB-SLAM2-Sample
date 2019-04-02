@@ -23,7 +23,7 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
   ```
 * run stereo sample using the follow type.
   ```
-  ./Examples/Stereo/stereo_mynt_s ./Vocabulary/ORBvoc.txt ./config/mynteye_s_stereo.yaml true
+  ./Examples/Stereo/stereo_mynt_s ./Vocabulary/ORBvoc.txt ./config/mynteye_s_stereo.yaml false
   ```
 
 ### Building the nodes for stereo (ROS)
@@ -50,7 +50,7 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
     ```
    Run ORB_SLAM2, open another terminal and follow the steps.
     ```
-    rosrun ORB_SLAM2 mynteye_s_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_s_stereo.yaml true /mynteye/left/image_raw /mynteye/right/image_raw
+    rosrun ORB_SLAM2 mynteye_s_stereo ./Vocabulary/ORBvoc.txt ./config/mynteye_s_stereo.yaml false /mynteye/left_rect/image_rect /mynteye/right_rect/image_rect
     ```
 
 ## Install with  <span id = "dsdkinstall">MYNT-EYE-D-SDK</span>
