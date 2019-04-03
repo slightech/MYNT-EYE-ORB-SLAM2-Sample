@@ -1,9 +1,6 @@
 # MYNT-ORBSLAM2
 [MYNT-EYE-S-SDK]: https://github.com/slightech/MYNT-EYE-S-SDK.git
 [MYNT-EYE-D-SDK]: https://github.com/slightech/MYNT-EYE-D-SDK.git
-[MYNT-EYE-VINS-Sample]:https://code.slightech.com:666/sweeper/VINS-Mono.git
-
-[ROS-StereoCalibration]:http://wiki.ros.org/camera_calibration/Tutorials/StereoCalibration
 
 At first ,judge if your device type is mynteye-d or mynteye-s,then follow the following installation process: [Install with MYNT-EYE-S-SDK](#ssdkinstall) / [Install with MYNT-EYE-D-SDK](#dsdkinstall).
 
