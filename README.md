@@ -11,8 +11,7 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
 ### If you wanna run ORB_SLAM2 with mynteye-s camera, please follow the steps:
 1. Download [MYNT-EYE-S-SDK][] and follow steps to install.
 2. Follow the normal procedure to install ORB_SLAM2.
-3. calibrate camera and update distortion_parameters and projection_parameters .
-4. run examples by mynteye camera.
+3. run examples by mynteye camera.
 
 ### Stereo Examples
 * Execute build.sh script:
@@ -54,8 +53,7 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
 ### If you wanna run ORB_SLAM2 with mynteye-d camera, please follow the steps:
 1. Download [MYNT-EYE-D-SDK][] and follow steps to install.
 2. Follow the normal procedure to install ORB_SLAM2.
-3. calibrate camera and update distortion_parameters and projection_parameters .
-4. run examples by mynteye camera.
+3. run examples by mynteye camera.
 
 ### Building the nodes for stereo (ROS)
 * Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2:
