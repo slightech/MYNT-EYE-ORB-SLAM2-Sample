@@ -27,6 +27,7 @@
 
 #include "mynteye/api/api.h"
 #include "mynteye/logger.h"
+#include "mynteye/device/types.h"
 
 MYNTEYE_USE_NAMESPACE
 
@@ -120,12 +121,21 @@ int main(int argc, char** argv) {
 
   auto request = api->GetStreamRequest();
 
-  // if (!ok) return 1;
-  request.height = 480;
-  request.width = 640;
-  request.fps = 30;
+  auto dev_name = api->GetInfo(Info::DEVICE_NAME);
+  if (dev_name.substr(0, 11) == "MYNT-EYE-S1") {
+    request.height = 480;
+    request.width = 640;
+    request.fps = 30;
+  } else if (dev_name.substr(0, 11) == "MYNT-EYE-S2") {
+    request.height = 1280;
+    request.width = 400;
+    request.fps = 30;
+  } else {
+    std::cout << "unknow device";
+    return -1;
+  }
+
   api->ConfigStreamRequest(request);
-  api->SetDisparityComputingMethodType(DisparityComputingMethod::BM);
 
   api->EnableStreamData(Stream::LEFT_RECTIFIED);
   api->EnableStreamData(Stream::RIGHT_RECTIFIED);

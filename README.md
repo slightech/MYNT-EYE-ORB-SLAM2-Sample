@@ -10,17 +10,6 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
 2. Follow the normal procedure to install ORB_SLAM2.
 3. run examples by mynteye camera.
 
-### Stereo Examples
-* Execute build.sh script:
-  ```
-  chmod +x build.sh
-  ./build.sh
-  ```
-* run stereo sample using the follow type.
-  ```
-  ./Examples/Stereo/stereo_mynt_s ./Vocabulary/ORBvoc.txt ./config/mynteye_s_stereo.yaml false
-  ```
-
 ### Building the nodes for stereo (ROS)
 * Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2:
     ```
