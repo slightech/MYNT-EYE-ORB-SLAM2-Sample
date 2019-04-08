@@ -2,13 +2,20 @@
 [MYNT-EYE-S-SDK]: https://github.com/slightech/MYNT-EYE-S-SDK.git
 [MYNT-EYE-D-SDK]: https://github.com/slightech/MYNT-EYE-D-SDK.git
 
-At first ,judge if your device type is mynteye-d or mynteye-s,then follow the following installation process: [Install with MYNT-EYE-S-SDK](#ssdkinstall) / [Install with MYNT-EYE-D-SDK](#dsdkinstall).
+At first, run this code;
+  ```
+  chmod +x build.sh
+  ./build.sh
+  ```
+Then ,judge if your device type is mynteye-d or mynteye-s,then follow the following installation process: [Install with MYNT-EYE-S-SDK](#ssdkinstall) / [Install with MYNT-EYE-D-SDK](#dsdkinstall).
 
 ## Install with <span id = "ssdkinstall">MYNT-EYE-S-SDK</span>
 ### If you wanna run ORB_SLAM2 with mynteye-s camera, please follow the steps:
 1. Download [MYNT-EYE-S-SDK][] and follow steps to install.
 2. Follow the normal procedure to install ORB_SLAM2.
 3. run examples by mynteye camera.
+
+
 
 ### Building the nodes for stereo (ROS)
 * Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2:
