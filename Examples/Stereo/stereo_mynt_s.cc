@@ -118,9 +118,12 @@ int main(int argc, char** argv) {
   auto &&api = API::Create(argc, argv);
   if (!api) return 1;
 
-  bool ok;
-  auto &&request = api->SelectStreamRequest(&ok);
-  if (!ok) return 1;
+  auto request = api->GetStreamRequest();
+
+  // if (!ok) return 1;
+  request.height = 480;
+  request.width = 640;
+  request.fps = 30;
   api->ConfigStreamRequest(request);
   api->SetDisparityComputingMethodType(DisparityComputingMethod::BM);
 
