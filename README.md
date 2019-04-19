@@ -10,11 +10,25 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
 2. Follow the normal procedure to install ORB_SLAM2.
 3. run examples by mynteye camera.
 
+### Prerequisites
+```commandline
+sudo apt-get -y install libglew-dev cmake 
+cd ~
+git clone https://github.com/stevenlovegrove/Pangolin.git
+cd Pangolin
+mkdir build
+cd build
+cmake ..
+cmake --build .
+sudo make install
+```
+
+
 ### Building the nodes for stereo (ROS)
 
 * Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2:
     ```
-    export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/ORB_SLAM2/Examples/ROS
+    export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/catkin_ws/src/MYNT-EYE-ORB-SLAM2-Sample
     ```
 * Execute build_ros.sh script:
     ```
@@ -51,7 +65,7 @@ At first ,judge if your device type is mynteye-d or mynteye-s,then follow the fo
 ### Building the nodes for stereo (ROS)
 * Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2:
     ```
-    export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/ORB_SLAM2/Examples/ROS
+    export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:~/catkin_ws/src/MYNT-EYE-ORB-SLAM2-Sample
     ```
 * Execute build_ros.sh script:
     ```
